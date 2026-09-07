@@ -26,7 +26,7 @@ pipeline {
 
     stage('Namespace 준비') {
       steps {
-        sh "${KCTL} apply -f k8s/namespaces.yaml --validate=false"
+        sh "${KCTL} apply -f k8s/namespaces.yaml"
       }
     }
 
