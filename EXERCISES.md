@@ -270,8 +270,10 @@ kubectl argo rollouts promote canary-demo -n rollout-demo
 Section 6 완료입니다.
 
 **추가 명령어** 
+```bash
 $ts = (Get-Date).ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ssZ")
 kubectl --context docker-desktop patch rollout canary-demo -n rollout-demo --type merge -p "{\"spec\":{\"template\":{\"metadata\":{\"annotations\":{\"kubectl.kubernetes.io/restartedAt\":\"$ts\"}}}}}"
+```
 
 
 ---
