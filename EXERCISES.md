@@ -269,6 +269,11 @@ kubectl argo rollouts promote canary-demo -n rollout-demo
 **체크포인트:** 트래픽 비율이 20 → 50 → 100으로 단계적으로 올라가는 것을 확인했다면
 Section 6 완료입니다.
 
+**추가 명령어** 
+$ts = (Get-Date).ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ssZ")
+kubectl --context docker-desktop patch rollout canary-demo -n rollout-demo --type merge -p "{\"spec\":{\"template\":{\"metadata\":{\"annotations\":{\"kubectl.kubernetes.io/restartedAt\":\"$ts\"}}}}}"
+
+
 ---
 
 ## Section 7. 운영 기본기 비교
